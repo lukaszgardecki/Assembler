@@ -61,7 +61,8 @@ nastepna_linia:
                 mov     di, 1           ; opcjonalne zawiniecie z powrotem do 1. linii po 25.
                 jmp     nastepna_linia
 
-koniec:         mov     ah, 4Ch         ; 4Ch = funkcja DOS 'zakończ program', AL = kod powrotu (0 = brak błedow)
+koniec:         mov     ah, 4Ch         ; AH = 4Ch (funkcja DOS 'zakończ program'), 
+                mov     al, 00h         ; AL = 00h (kod powrotu: brak błędów)
                 int     21h             ; glowne przerwanie DOS (21h) - AH=4Ch, AL=0, konczy program i zwraca kod powrotu 0 do systemu operacyjnego
 
 ; --- PROCEDURA POMOCNICZA ---

@@ -1,0 +1,7 @@
+# Pliki systemowe macOS we wszystkich podfolderach
+**/.DS_Store
+.DS_Store
+._*
+*.OBJ
+*.MAP
+*.EXE

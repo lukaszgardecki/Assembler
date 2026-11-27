@@ -6,7 +6,7 @@ start:          mov     ax, 0003h       ; 00h - tryb wideo (czysci ekran i ustaw
                 int     10h             ; Interrupt (przerwanie), 10h to numer z tablicy przerwan obslugujacy ekran/karte graficzna (BIOS Video Services)
 
                 mov     ax, 0B800h      ; 0B800h - adres w pamieci wideo (VRAM)
-                mov     es, ax          ; przepisanie do rejestru segmentowego E
+                mov     es, ax          ; przepisanie do rejestru segmentowego ES
                 xor     di, di          ; zerujemy DI (bajt znaku pierwszego pola), ustawia flage ZF na 1
 
 ; --- Wypelnienie ekranu 01..25 (czarne tlo) ---
@@ -76,7 +76,9 @@ petla_kolor:    stosb                   ; zapisz sam atrybut pod ES:[DI] i zwiek
 
 MojProgram      ends
 
+;Segment stosu:
 moj_stos        segment stack
-                dw      64 dup(?)
+                dw      64 dup(?)       ; rezerwuje 128 bajtow na stos (64 slowa = 64 * 2 bajty = 128 bajtow)
 moj_stos        ends
+                
                 end     start

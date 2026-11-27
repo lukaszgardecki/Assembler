@@ -1,8 +1,8 @@
 
  Start  Stop   Length Name               Class
 
- 00000H 0005FH 00060H MOJPROGRAM         
- 00060H 000DFH 00080H MOJ_STOS           
+ 00000H 00061H 00062H MOJPROGRAM         
+ 00070H 000EFH 00080H MOJ_STOS           
 
 Program entry point at 0000:0000
 
